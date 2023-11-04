@@ -19,7 +19,7 @@ paths:
             work:
               value: urn:bb:work:89QPPRK1EDJPW835E8G64SBKEG
             contributor:
-              value: urn:bb:contributor:89QPPRK1EDJPW835E8G64SBKEG
+              value: urn:bb:contributor:J8VRQN45EH4C31VGV9V4V6WYK4
       responses:
         '303':
           description: See Other
