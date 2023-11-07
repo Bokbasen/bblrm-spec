@@ -63,7 +63,10 @@ components:
           type: string
           nullable: false
           readOnly: true
+
         languages:
+          description: The language(s) of this work ISO 639-2/B
+          example: ["nob", "nno"]
           type: array
           items:
             type: string
