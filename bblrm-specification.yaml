@@ -7,7 +7,7 @@ info:
 paths:
   /lorem/{urn}:
     get:
-      description: Resolve URN representing a Resource returning its location in a Location header
+      description: Resolve URN representing a Resource returning its relative location in a Location header.
       parameters:
         - in: path
           name: urn
@@ -18,21 +18,100 @@ paths:
           examples:
             work:
               value: urn:bb:work:89QPPRK1EDJPW835E8G64SBKEG
-            contributor:
-              value: urn:bb:contributor:J8VRQN45EH4C31VGV9V4V6WYK4
       responses:
         '303':
           description: See Other
           headers:
             Location:
-              example: work/89QPPRK1EDJPW835E8G64SBKEG
+              example: "work/89QPPRK1EDJPW835E8G64SBKEG"
               schema:
                 type: string
         '400':
           description: Bad request. Resource URN must be valid.
 
         '404':
-          description: A user with the specified ID was not found.
+          description: Not Found. A resource with the specified URN was not found.
 
         '5XX':
           description: Unexpected error.
+
+  /lorem/work/{id}:
+    description: Work by id
+    get:
+      description: Get Work by id
+      tags:
+        - work
+      operationId: getWork
+      parameters:
+        - in: path
+          description: The work to retrieve by id
+          name: id
+          schema:
+            type: string
+          required: true
+          example: "89QPPRK1EDJPW835E8G64SBKEG"
+
+        - in: header
+          description: Etag
+          name: If-None-Match
+          schema:
+            type: integer
+          example: 3
+
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Work'
+
+        '304':
+          description: Not Modified
+
+        '400':
+          description: Bad request. Resource ID must be valid.
+
+        '404':
+          description: Not Found. A resource with the specified ID was not found.
+
+        '5XX':
+          description: Unexpected error.
+
+
+components:
+  schemas:
+
+    Work:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - work
+        urn:
+          type: string
+          nullable: false
+          readOnly: true
+        languages:
+          type: array
+          items:
+            type: string
+          readOnly: true
+          nullable: false
+        title:
+          type: WorkTitle
+
+    WorkTitle:
+      type: object
+      properties:
+        main:
+          type: string
+        part:
+          type: string
+        number:
+          type: string
+        variants:
+          type: array
+          items:
+            type: string
