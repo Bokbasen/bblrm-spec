@@ -74,13 +74,12 @@ components:
         title:
           $ref: '#/components/schemas/WorkTitle'
 
-        contributors:
-          type: object
-          properties:
-            role:
-              type: string
-            urn:
-              type: string
+        relations:
+          type: array
+          items:
+            anyOf:
+              - $ref: "#/components/schemas/ContributorReference"
+              - $ref: "#/components/schemas/SeriesReference"
 
 
     WorkTitle:
@@ -96,3 +95,19 @@ components:
           type: array
           items:
             type: string
+
+    ContributorReference:
+      type: object
+      properties:
+        role:
+          type: string
+        urn:
+          type: string
+
+    SeriesReference:
+      type: object
+      properties:
+        role:
+          type: string
+        urn:
+          type: string
