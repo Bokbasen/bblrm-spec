@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bokbasen LRM API</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      redoc {
+        display: block;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--
+      Disable search because of https://github.com/Redocly/redoc/issues/1362#issuecomment-860873912
+    -->
+    <redoc spec-url="bblrm-specification.yaml" style="height: 400px" disable-search="true"></redoc>
+    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
+  </body>
+</html>
