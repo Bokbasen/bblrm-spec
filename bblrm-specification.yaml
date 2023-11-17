@@ -107,7 +107,7 @@ components:
     SeriesReference:
       type: object
       properties:
-        role:
+        number:
           type: string
         urn:
           type: string
