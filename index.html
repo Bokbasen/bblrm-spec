@@ -19,7 +19,10 @@
     />
   </head>
   <body>
-    <redoc spec-url="bblrm-specification.yaml" style="height: 400px"></redoc>
+    <!--
+      Disable search because of https://github.com/Redocly/redoc/issues/1362#issuecomment-860873912
+    -->
+    <redoc spec-url="bblrm-specification.yaml" style="height: 400px" disable-search="true"></redoc>
     <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
   </body>
 </html>
