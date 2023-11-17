@@ -61,13 +61,13 @@ components:
             - work
         urn:
           type: string
-          nullable: false
+          required: true
 
         languages:
           description: The language(s) of this work ISO 639-2/B
           example: ["nob", "nno"]
           type: array
-          nullable: false
+          required: true
           items:
             type: string
 
