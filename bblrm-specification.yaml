@@ -5,6 +5,38 @@ info:
   version: 0.1.0
 
 paths:
+  /lorem/{urn}:
+    get:
+      description: Resolve URN representing a Resource returning its location in a Location header
+      parameters:
+        - in: path
+          name: urn
+          schema:
+            type: string
+          required: true
+          description: The resource to retrieve by URN
+          examples:
+            work:
+              value: urn:bb:work:89QPPRK1EDJPW835E8G64SBKEG
+            agent:
+              value: urn:bb:agent:89QPPRK1EDJPW835E8G64SBKEG
+      responses:
+        '303':
+          description: See Other
+          headers:
+            Location:
+              example: "work/89QPPRK1EDJPW835E8G64SBKEG"
+              schema:
+                type: string
+        '400':
+          description: Bad request. Resource URN must be valid.
+
+        '404':
+          description: Not Found. A resource with the specified URN was not found.
+
+        '5XX':
+          description: Unexpected error.
+
   /lorem/work/{id}:
     description: Work by id
     get:
@@ -61,13 +93,13 @@ components:
             - work
         urn:
           type: string
-          nullable: false
+          required: true
 
         languages:
           description: The language(s) of this work ISO 639-2/B
           example: ["nob", "nno"]
           type: array
-          nullable: false
+          required: true
           items:
             type: string
 
@@ -107,7 +139,7 @@ components:
     SeriesReference:
       type: object
       properties:
-        role:
+        number:
           type: string
         urn:
           type: string
