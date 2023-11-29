@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.0.0
 info:
   title: Bokbasen LRM API
   description: Bokbasen LRM API
@@ -17,9 +17,9 @@ paths:
           description: The resource to retrieve by URN
           examples:
             work:
-              value: urn:bb:work:89QPPRK1EDJPW835E8G64SBKEG
+              value: bb:work:89QPPRK1EDJPW835E8G64SBKEG
             agent:
-              value: urn:bb:agent:89QPPRK1EDJPW835E8G64SBKEG
+              value: bb:agent:02Q94MAYSX53N7PJ1HC8EEW5WW
       responses:
         '303':
           description: See Other
@@ -91,7 +91,7 @@ components:
           type: string
           enum:
             - work
-        urn:
+        id:
           type: string
           required: true
 
@@ -106,12 +106,15 @@ components:
         title:
           $ref: '#/components/schemas/WorkTitle'
 
-        relations:
+        contributors:
           type: array
           items:
-            anyOf:
-              - $ref: "#/components/schemas/ContributorReference"
-              - $ref: "#/components/schemas/SeriesReference"
+            $ref: "#/components/schemas/ContributorReference"
+
+        series:
+          type: array
+          items:
+            $ref: "#/components/schemas/SeriesReference"
 
 
     WorkTitle:
@@ -133,7 +136,7 @@ components:
       properties:
         role:
           type: string
-        urn:
+        id:
           type: string
 
     SeriesReference:
@@ -141,5 +144,5 @@ components:
       properties:
         number:
           type: string
-        urn:
+        id:
           type: string
