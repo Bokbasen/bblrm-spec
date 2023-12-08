@@ -70,7 +70,6 @@ paths:
 
         '304':
           description: Not Modified
-
         '400':
           description: Bad request. Resource ID must be valid.
 
@@ -80,7 +79,25 @@ paths:
         '5XX':
           description: Unexpected error.
 
+  /lorem/agent/{id}:
 
+    get:
+      description: Get Work by id
+      operationId: getAgent
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          example: "J8VRQN45EH4C31VGV9V4V6WYK4"
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Agent'
 components:
   schemas:
 
@@ -113,6 +130,21 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/SeriesReference"
+
+
+    Agent:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - agent
+        id:
+          type: string
+        name:
+          type: string
+        isni:
+          type: string
 
 
     WorkTitle:
