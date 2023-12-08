@@ -1,0 +1,29 @@
+{
+  "type": "work",
+  "id": "bb:work:YN69M4FE695TBC810QABTHCY9M",
+  "languages": [
+    "nob"
+  ],
+  "title": {
+    "main": "Fabel 4A",
+    "part": null,
+    "number": null,
+    "variants": []
+  },
+  "contributors": [
+    {
+      "id": "bb:agent:VDGTJRZMND6EHCAA9T46GDTV14",
+      "role": "A01"
+    },
+    {
+      "id": "bb:agent:G9KKESDNGS58Q7427WT3AQ20KR",
+      "role": "A01"
+    }
+  ],
+  "series": [
+    {
+      "id": "bb:series:E7QPNR9CWS1JZ9028Q1A2S6D7R",
+      "number": "2"
+    }
+  ]
+}
