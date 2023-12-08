@@ -134,15 +134,15 @@ components:
     ContributorReference:
       type: object
       properties:
-        role:
-          type: string
         id:
           type: string
+        role:
+          type: string # Roles based on
 
     SeriesReference:
       type: object
       properties:
-        number:
-          type: string
         id:
+          type: string
+        number:
           type: string
