@@ -17,7 +17,7 @@ paths:
           description: The resource to retrieve by URN
           examples:
             work:
-              value: bb:work:89QPPRK1EDJPW835E8G64SBKEG
+              value: bb:work:62E1FNKMKX7CF8W5WKHD19QAD8
             agent:
               value: bb:agent:02Q94MAYSX53N7PJ1HC8EEW5WW
       responses:
@@ -25,7 +25,7 @@ paths:
           description: See Other
           headers:
             Location:
-              example: "work/89QPPRK1EDJPW835E8G64SBKEG"
+              example: "work/62E1FNKMKX7CF8W5WKHD19QAD8"
               schema:
                 type: string
         '400':
@@ -90,7 +90,7 @@ paths:
           schema:
             type: string
           required: true
-          example: "J8VRQN45EH4C31VGV9V4V6WYK4"
+          example: "02Q94MAYSX53N7PJ1HC8EEW5WW"
       responses:
         '200':
           description: OK
