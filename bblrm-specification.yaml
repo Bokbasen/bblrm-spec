@@ -145,6 +145,8 @@ components:
           type: string
         isni:
           type: string
+        bare:
+          type: string
 
 
     WorkTitle:
@@ -168,7 +170,12 @@ components:
         id:
           type: string
         role:
-          type: string # Roles based on
+          type: string # Roles based on Onix List 17: Contributor role code (subset)
+          enum:
+            - A01
+            - A08
+            - A12
+            - B01
 
     SeriesReference:
       type: object
