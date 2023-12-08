@@ -1,0 +1,19 @@
+{
+  "type": "work",
+  "id": "bb:work:62E1FNKMKX7CF8W5WKHD19QAD8",
+  "languages": [
+    "nob"
+  ],
+  "title": {
+    "main": "Papirflybursdag",
+    "part": null,
+    "number": null,
+    "variants": []
+  },
+  "contributors": [
+    {
+      "id": "bb:agent:02Q94MAYSX53N7PJ1HC8EEW5WW",
+      "role": "author"
+    }
+  ]
+}
