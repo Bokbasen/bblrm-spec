@@ -93,13 +93,11 @@ components:
             - work
         id:
           type: string
-          required: true
 
         languages:
           description: The language(s) of this work ISO 639-2/B
           example: ["nob", "nno"]
           type: array
-          required: true
           items:
             type: string
 
@@ -130,6 +128,7 @@ components:
           type: array
           items:
             type: string
+
 
     ContributorReference:
       type: object
