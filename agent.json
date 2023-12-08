@@ -1,6 +1,7 @@
 {
   "type": "agent",
-  "urn": "bb:agent:02Q94MAYSX53N7PJ1HC8EEW5WW",
+  "id": "bb:agent:02Q94MAYSX53N7PJ1HC8EEW5WW",
   "name": "Annette Saugestad Helland",
-  "isni": "0000000364191822"
+  "isni": "0000000364191822",
+  "bare": "6092574"
 }
