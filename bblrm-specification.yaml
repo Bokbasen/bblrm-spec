@@ -121,6 +121,20 @@ components:
         title:
           $ref: '#/components/schemas/WorkTitle'
 
+
+        audiences:
+          description: The intended audience(s) of this work
+          type: array
+          items:
+            type: string
+            enum:
+              - 10
+              - 11
+              - 12
+              - 13
+              - 14
+              - 15
+
         contributors:
           type: array
           items:
@@ -129,7 +143,7 @@ components:
         series:
           type: array
           items:
-            $ref: "#/components/schemas/SeriesReference"
+            $ref: "#/components/schemas/CollectionReference"
 
 
     Agent:
@@ -177,7 +191,7 @@ components:
             - A12
             - B01
 
-    SeriesReference:
+    CollectionReference:
       type: object
       properties:
         id:
