@@ -5,7 +5,7 @@ info:
   version: 0.1.0
 
 paths:
-  /lorem/{urn}:
+  /lrm/{urn}:
     get:
       description: Resolve URN representing a Resource returning its location in a Location header
       parameters:
@@ -37,7 +37,7 @@ paths:
         '5XX':
           description: Unexpected error.
 
-  /lorem/work/{id}:
+  /lrm/work/{id}:
     description: Work by id
     get:
       description: Get Work by id
@@ -79,7 +79,7 @@ paths:
         '5XX':
           description: Unexpected error.
 
-  /lorem/agent/{id}:
+  /lrm/agent/{id}:
 
     get:
       description: Get Work by id
@@ -121,6 +121,17 @@ components:
         title:
           $ref: '#/components/schemas/WorkTitle'
 
+        thema:
+          description: Thema codes
+          type: array
+          items:
+            type: string
+
+        subjects:
+          description: Subjects based on https://vokabular.bs.no/bibbi/nb/
+          type: array
+          items:
+            type: string
 
         audiences:
           description: The intended audience(s) of this work
@@ -128,12 +139,13 @@ components:
           items:
             type: string
             enum:
-              - 10
-              - 11
-              - 12
-              - 13
-              - 14
-              - 15
+              - Age0to3
+              - Age3to6
+              - Age6to9
+              - Age9to12
+              - Age12to16
+              - Adult
+
 
         contributors:
           type: array
