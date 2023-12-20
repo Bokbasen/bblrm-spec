@@ -119,6 +119,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Collection'
+
+  /lrm/audience/{id}:
+    get:
+      description: Get Audience by id
+      operationId: getAudience
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          example: "QBCA7FECYD5ZKDKE4HHS6B3PJ0"
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Audience'
 components:
   schemas:
 
@@ -143,7 +162,7 @@ components:
           $ref: '#/components/schemas/WorkTitle'
 
         thema:
-          description: Thema codes
+          description: Thema codes based on Editeur https://www.editeur.org/151/Thema/
           type: array
           items:
             type: string
@@ -164,15 +183,7 @@ components:
           description: The intended audience(s) of this work
           type: array
           items:
-            type: string
-            enum:
-              - Age0to3
-              - Age3to6
-              - Age6to9
-              - Age9to12
-              - Age12to16
-              - Adult
-
+            $ref: "#/components/schemas/AudienceReference"
 
         contributors:
           type: array
@@ -244,4 +255,18 @@ components:
         id:
           type: string
         name:
+          type: string
+
+    AudienceReference:
+      type: object
+      properties:
+        id:
+          type: string
+
+    Audience:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
           type: string
