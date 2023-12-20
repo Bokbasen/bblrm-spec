@@ -22,6 +22,8 @@ paths:
               value: bb:agent:02Q94MAYSX53N7PJ1HC8EEW5WW
             collection:
               value: bb:collection:E7QPNR9CWS1JZ9028Q1A2S6D7R
+            subject:
+              value: bb:subject:919X53SMQN2K7AEM36Y58P2YS8
       responses:
         '303':
           description: See Other
@@ -183,6 +185,7 @@ components:
 
         thema:
           description: Thema codes based on Editeur https://www.editeur.org/151/Thema/
+          example: ["YBCS", "YXHB"]
           type: array
           items:
             type: string
