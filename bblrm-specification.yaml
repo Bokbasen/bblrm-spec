@@ -148,6 +148,12 @@ components:
           items:
             type: string
 
+        genres:
+          description: Genres based on https://id.nb.no/vocabulary/ntsf/
+          type: array
+          items:
+            type: string
+
         subjects:
           description: Subjects based on https://vokabular.bs.no/bibbi/nb/
           type: array
