@@ -138,6 +138,26 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Audience'
+
+  /lrm/subject/{id}:
+    get:
+      description: Get Subject by id
+      operationId: getSubject
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          example: "919X53SMQN2K7AEM36Y58P2YS8"
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subject'
+
 components:
   schemas:
 
@@ -174,10 +194,10 @@ components:
             type: string
 
         subjects:
-          description: Subjects based on https://vokabular.bs.no/bibbi/nb/
+          description: Subjects
           type: array
           items:
-            type: string
+            $ref: "#/components/schemas/SubjectReference"
 
         audiences:
           description: The intended audience(s) of this work
@@ -269,4 +289,18 @@ components:
         id:
           type: string
         description:
+          type: string
+
+    SubjectReference:
+      type: object
+      properties:
+        id:
+          type: string
+
+    Subject:
+      type: object
+      properties:
+        id:
+          type: string
+        label:
           type: string
