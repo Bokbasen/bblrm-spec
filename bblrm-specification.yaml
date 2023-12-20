@@ -20,6 +20,8 @@ paths:
               value: bb:work:62E1FNKMKX7CF8W5WKHD19QAD8
             agent:
               value: bb:agent:02Q94MAYSX53N7PJ1HC8EEW5WW
+            collection:
+              value: bb:collection:E7QPNR9CWS1JZ9028Q1A2S6D7R
       responses:
         '303':
           description: See Other
@@ -98,6 +100,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Agent'
+
+  /lrm/collection/{id}:
+    get:
+      description: Get Collection by id
+      operationId: getCollection
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          example: "E7QPNR9CWS1JZ9028Q1A2S6D7R"
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
 components:
   schemas:
 
@@ -209,4 +230,12 @@ components:
         id:
           type: string
         number:
+          type: string
+
+    Collection:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
           type: string
